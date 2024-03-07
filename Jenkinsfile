@@ -14,7 +14,7 @@ pipeline {
          
         stage('Deploy to Server') {
             steps {
-                sh "cp -r $WORKSPACE/* $SERVER_LOCATION"
+                sh "sudo cp -r $WORKSPACE/* $SERVER_LOCATION"
             }
         }
 
