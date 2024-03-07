@@ -18,13 +18,4 @@ pipeline {
             }
         }
     }
-    
-    post {
-        success {
-            slackSend color: 'good', message: "Build succeeded! :white_check_mark:", tokenCredentialId: 'slack-token', channel: 'jenkins-build-deployement'
-        }
-        failure {
-            slackSend color: 'danger', message: "Build failed! :x:", tokenCredentialId: 'slack-token', channel: 'jenkins-build-deployement'
-        }
-    }
 }
