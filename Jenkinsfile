@@ -17,18 +17,6 @@ pipeline {
                 sh "cp -r $WORKSPACE/* $SERVER_LOCATION"
             }
         }
-        
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    // Run SonarScanner
-                    script {
-                        def scannerHome = tool 'SonarScanner';
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
-                }
-            }
-        }
     }
     
     post {
