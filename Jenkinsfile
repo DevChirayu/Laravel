@@ -17,7 +17,6 @@ pipeline {
                 sh 'chmod -R 775 /var/www/html/laravel/storage/'
                 sh 'chmod 777 /var/www/html/laravel/storage/logs/laravel.log'
                 sh 'chcon -R -t httpd_sys_rw_content_t /var/www/html/laravel/storage'
-                sh 'chmod -R 775 /var/www/html/laravel/'
             }
         }
          
