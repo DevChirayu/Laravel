@@ -11,14 +11,24 @@ pipeline {
                 checkout scm
             }
         }
+
+        stage('pre init') {
+            steps {
+                sh 'sudo chmod -R 775 storage/'
+                sh 'sudo chown -R :www-data storage/'
+                sh 'sudo chmod 777 storage/logs/laravel.log'
+                sh 'sudo chmod -R 755 /var/www/myLaravelApp/storage'
+                sh 'sudo chcon -R -t httpd_sys_rw_content_t /var/www/myLaravelApp/storage'
+            }
+        }
          
         stage('Deploy to Server') {
             steps {
-                sh "sudo cp -r $WORKSPACE/* $SERVER_LOCATION"
+                sh "cp -r $WORKSPACE/* $SERVER_LOCATION"
             }
         }
 
-        stage('init') {
+        stage('post init') {
             steps {
                 sh 'cp .env.example .env'
                 sh 'php artisan key:generate'
