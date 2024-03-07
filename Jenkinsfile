@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        SERVER_LOCATION = '/var/www/hkb.togel/'
+        SERVER_LOCATION = '/var/www/laravel/'
     }
     
     stages {
