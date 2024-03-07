@@ -34,7 +34,7 @@ pipeline {
                 sh "sed -i -e 's/DB_DATABASE=homestead/DB_DATABASE=staging/g' .env"
                 sh "sed -i -e 's/DB_USERNAME=homestead/DB_USERNAME=yourusername/g' .env"
                 sh "sed -i -e 's/DB_PASSWORD=secret/DB_PASSWORD=yourpassword/g' .env"
-                sh 'chmod 777 storage/logs/laravel.log'
+                sh 'chmod 777 /var/www/html/laravel/storage/logs/laravel.log'
                 sh 'chmod -R 755 /var/www/html/laravel/storage'
                 sh 'chcon -R -t httpd_sys_rw_content_t /var/www/html/laravel/storage'
             }
