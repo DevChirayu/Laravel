@@ -29,6 +29,7 @@ pipeline {
         stage('post init') {
             steps {
                 sh 'cp .env.example .env'
+                sh 'composer install'
                 sh 'php artisan key:generate'
                 sh "sed -i -e 's/DB_DATABASE=homestead/DB_DATABASE=staging/g' .env"
                 sh "sed -i -e 's/DB_USERNAME=homestead/DB_USERNAME=yourusername/g' .env"
