@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/jenkins', function () {
-    return 'Jenkins build success with webhook';
+    return 'Jenkins build success with webhook test';
 });
