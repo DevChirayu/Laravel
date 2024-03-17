@@ -17,6 +17,7 @@ pipeline {
 
         stage('pre init') {
             steps {
+                sh 'sudo chown -R jenkins:jenkins ${SERVER_LOCATION}'
                 sh 'chmod -R 775 ${STORAGE_DIRECTORY}'
                 sh "chmod 777 ${LOG_FILE}"
                 sh 'chcon -R -t httpd_sys_rw_content_t ${STORAGE_DIRECTORY}'
