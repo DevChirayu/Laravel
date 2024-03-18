@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/jenkins', function () {
     return 'Jenkins build success with webhook test poll push one';
 });
+Route::get('/sonar', function () {
+    return 'Jenkins build success with webhook test poll push one';
+});
