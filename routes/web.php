@@ -21,5 +21,5 @@ Route::get('/jenkins', function () {
     return 'Jenkins build success with webhook test poll push one';
 });
 Route::get('/sonar', function () {
-    return 'Jenkins build success with webhook test poll push one';
+    return 'Sonar build success with webhook test poll push one';
 });
